@@ -7,7 +7,6 @@ def makeDatabase():
     file.close()
     connection = pymongo.MongoClient("homer.stuy.edu")
     db = connection["its2010again"]
+    db.dropDatabase()
     collection = db["deck"]
     collection.insert_many(dictionary["cards"])
-
-makeDatabase()
