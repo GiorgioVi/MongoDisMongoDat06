@@ -36,6 +36,13 @@
                 <p><i>This search query will return a list of cards whose converted mana cost is between the minimum and maximum amounts specified. Converted Mana Cost is the sum of all mana, colored or colorless, required to cast a card.</i></p>
                 <input type="submit" name="cmc" value="Search">
             </div>
+            <div class="box">
+                What should the minimum stats be for this card if it is a creature?<br>
+                Power &ge; <input type="number" name="p" value="1"><br>
+                Toughness &ge; <input type="number" name="t" value="1"><br>
+                <p><i>This search query will return a list of creature cards whose power (attack) is at least the number specified AND whose toughness (defense) is at least the number specified.</i></p>
+                <input type="submit" name="stats" value="Search">
+            </div>
         </form>
     </body>
 </html>
