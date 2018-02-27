@@ -86,24 +86,3 @@ def get_min_stats(attack, defense):
 #Returns a list of cards with the given rarity
 def get_by_rarity(rarity):
   return cursorToList(query({"rarity": rarity}))
-
-print "get_by_name Spark Elemental"
-print get_by_name("Spark Elemental")
-print ""
-print "get_cards_with_color Red"
-print len(get_cards_with_color("Red"))
-print ""
-print "get_mana_range(3, 4)"
-print len(get_mana_range(3, 4))
-print ""
-print "get_by_artist Michael Sutfin"
-print get_by_artist("Michael Sutfin")[:2]
-print ""
-print "get_min_stats(2, 2)"
-print len(get_min_stats(2, 2))
-print ""
-print "get_cheaper_tougher(3, 2)"
-print len(get_cheaper_tougher(3, 2))
-print ""
-print "get_cheaper_stronger(3, 2)"
-print len(get_cheaper_stronger(3, 2))
