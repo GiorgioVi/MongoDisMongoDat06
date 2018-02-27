@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Magic the Gathering</title>
+        <style type="text/css">
+        .box {
+            padding: 20px;
+            margin-top: 10px;
+            border: 1px solid #000;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>Please fill out <u>one</u> of the following boxes.</h1>
+        <hr>
+        <form method="GET" action="/results">
+            <div class="box">
+                How rare should the card be?
+                <select name="r">
+                    <option>Basic Land</option>
+                    <option selected>Common</option>
+                    <option>Uncommon</option>
+                    <option>Rare</option>
+                    <option>Mythic Rare</option>
+                    <option>Special</option>
+                </select>
+                <p><i>This search query will return a list of cards, all of whom have the selected rarity. Note that the deck being used may not have cards of all the possible rarities. It shouldn't come as a suprise if there are no Mythic Rares.</i></p>
+                <input type="submit" name="rarity" value="Search">
+            </div>
+            <div class="box">
+                What range of Converted Mana Cost should the card be in?<br>
+                <label for="min">Minimum</label>
+                <input id="min" name="min" value="0" type="number"><br>
+                <label for="max">Maximum</label>
+                <input id="max" name="max" value="10" type="number">
+                <p><i>This search query will return a list of cards whose converted mana cost is between the minimum and maximum amounts specified. Converted Mana Cost is the sum of all mana, colored or colorless, required to cast a card.</i></p>
+                <input type="submit" name="cmc" value="Search">
+            </div>
+        </form>
+    </body>
+</html>
