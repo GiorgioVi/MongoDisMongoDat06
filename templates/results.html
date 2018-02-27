@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Magic the Gathering</title>
+        <style type="text/css">
+        .card {
+            display: inline-block;
+            width: 2.5in;
+            height: 3.5in;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 10px;
+            overflow: scroll;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>Here are the results</h1>
+        <p>The name of the card is shown in bold at the top. It's properties are arranged in a table below.</p>
+        <p>* <u>P | T</u> means that the power is displayed, then a pipe, then the toughness. The former is attack and the latter is defense.</p>
+        <h3>You searched for "{{ query }}"</h3>
+        <hr>
+        {% for card in list %}
+            <div class="card">
+                <b>{{ card["name"] }}</b><br>
+                <table>
+                    <tr><td>Rarity</td><td>{{ card["rarity"] }}</td></tr>
+                    <tr><td>Mana Cost</td><td>{{ card["manaCost"] }}</td></tr>
+                    <tr><td>Type</td><td>{{ card["type"] }}</td></tr>
+                    <tr><td>P | T</td><td>{{ card["power"] }} | {{ card["toughness"] }}</td></tr>
+                    <tr><td>Text</td><td>{{ card["text"] }}</td></tr>
+                    <tr><td>Quote</td><td>{{ card["flavor"] }}</td></tr>
+                </table>
+            </div>
+        {% endfor %}
+    </body>
+</html>
