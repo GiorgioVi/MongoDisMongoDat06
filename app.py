@@ -17,6 +17,10 @@ def results():
         min = request.args.get("min", '0')
         max = request.args.get("max", '10')
         return render_template("results.html", query="Cards that cost between "+min+" and "+max+" mana", list=query.get_mana_range(min, max))
+    elif "stats" in request.args:
+        power = request.args.get("p", "1")
+        toughness = request.args.get("t", "1")
+        return render_template("results.html", query="Cards whose power >= "+power+" and toughness >= "+toughness, list=query.get_min_stats(power, toughness))
     else:
         return redirect(url_for("homepage"))
 
