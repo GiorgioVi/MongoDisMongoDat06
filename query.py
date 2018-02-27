@@ -83,6 +83,10 @@ def get_cheaper_stronger(cmc, attack):
 def get_min_stats(attack, defense):
     return cursorToList(query({"toughness": {"$gte": str(attack)}, "power": {"$gte": str(defense)}}))
 
+#Returns a list of cards with the given rarity
+def get_by_rarity(rarity):
+  return cursorToList(query({"rarity": rarity}))
+
 print "get_by_name Spark Elemental"
 print get_by_name("Spark Elemental")
 print ""
